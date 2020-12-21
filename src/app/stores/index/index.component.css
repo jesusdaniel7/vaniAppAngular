@@ -1,0 +1,23 @@
+.stores-container{
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    
+}
+
+.example-card {
+    margin:10px;
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+
+    background-image: url('https://e7.pngegg.com/pngimages/340/745/png-clipart-computer-icons-white-instagram-icon-text-logo.png');
+    background-size: 20px cover;
+  }
+
+  .store-img{
+      height: 300px;
+      object-fit: cover;
+  }

@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="nav">
+  <div>
+    <button mat-button routerLink="">Inicio</button>
+    <button mat-button [matMenuTriggerFor]="stores">Tiendas</button>
+    <mat-menu #stores="matMenu" yPosition="above">
+      <button mat-menu-item routerLink="stores">Tiendas</button>
+      <button mat-menu-item routerLink="stores/create">
+        Agregar una tienda
+      </button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="storetypes">Tipos de tiendas</button>
+    <mat-menu #storetypes="matMenu" yPosition="above">
+      <button mat-menu-item routerLink="storetypes">Tipos de tiendas</button>
+      <button mat-menu-item routerLink="storetypes/create">
+        Agregar un tipo de tienda
+      </button>
+      <button mat-menu-item routerLink="storetypes/edit">Editar una tienda</button>
+    </mat-menu>
+  </div>
+  <div>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon">
+      <mat-icon>store</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
