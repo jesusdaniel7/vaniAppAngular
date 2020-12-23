@@ -1,0 +1,24 @@
+<div *ngIf="!listado" class="loading-icon">
+  <span #cargando> 
+    <ng-content select="[cargando]"></ng-content>
+  </span>
+  <span *ngIf="!cargando.innerHTML.trim()">
+    <img
+      src="https://flevix.com/wp-content/uploads/2019/07/Ring-Loading-1.gif"
+      alt=""
+    />
+  </span>
+</div>
+
+<ng-container *ngIf="listado?.length === 0">
+  <span #vacio>
+    <ng-content select="[vacio]"> </ng-content>
+  </span>
+  <span *ngIf="!vacio.innerHTML.trim()">
+    <p class="no-exit">No hay datos para mostrar. :(</p>
+  </span>
+</ng-container>
+
+<ng-container *ngIf="listado && listado.length > 0">
+  <ng-content select="[contenido]"></ng-content>
+</ng-container>

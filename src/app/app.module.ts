@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms'
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,9 @@ import { StoreTypeIndexComponent } from './store-types/store-type-index/store-ty
 import { StoreTypeCreateComponent } from './store-types/store-type-create/store-type-create.component';
 import { StoreTypesFormComponent } from './store-types/store-types-form/store-types-form.component';
 import { StoreTypesEditComponent } from './store-types/store-types-edit/store-types-edit.component';
+import { MostrarErroresComponent } from './helpers/mostrar-errores/mostrar-errores.component';
+import { ReutilizarComponent } from './helpers/reutilizar/reutilizar.component';
+import { ListadGenericoComponent } from './helpers/listad-generico/listad-generico.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +35,18 @@ import { StoreTypesEditComponent } from './store-types/store-types-edit/store-ty
     StoreTypeIndexComponent,
     StoreTypeCreateComponent,
     StoreTypesFormComponent,
-    StoreTypesEditComponent
+    StoreTypesEditComponent,
+    MostrarErroresComponent,
+    ReutilizarComponent,
+    ListadGenericoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,9 @@ export class StoreTypesFormComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder) {}
 
   @Input()
+  errors: string[] = [];
+
+  @Input()
   model:storeTypesDTO;
 
   @Output()

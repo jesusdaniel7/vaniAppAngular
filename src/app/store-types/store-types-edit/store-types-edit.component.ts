@@ -14,9 +14,6 @@ export class StoreTypesEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  model: storeTypesDTO = {
-    name: 'Comesticos'
-  }
   
   saveChanges(storeType: storeTypesDTO) {
     console.log(storeType);

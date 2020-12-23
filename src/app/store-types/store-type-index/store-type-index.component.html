@@ -1,3 +1,39 @@
-
 <div class="top-message">Tipos de tiendas</div>
 
+<div *ngFor="let storeType of storeTypeDTO; let index = index">
+  <p>
+    indice: {{ index }} <br />
+    Nombre del tipo de tienda: {{ storeType.Name }} 
+    <br />
+    Id del tipo de tienda: {{ storeType.StoreTypeId }}
+  </p>
+</div>
+
+<app-listad-generico [listado]="storeTypeDTO">
+  <ng-container vacio>
+    <p>No se han agregado tipos de tiendas</p>
+  </ng-container>
+  <ng-container contenido>
+    Nombre del tipo de tienda: {{ storeTypeDTO[2].Name }} <br />
+    Id del tipo de tienda: {{ storeTypeDTO[2].StoreTypeId }}
+
+    <table
+      #table
+      mat-table
+      [dataSource]="storeTypeDTO"
+      class="mat-elevation-z8"
+    >
+      <ng-container matColumnDef="StoreTypeId">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.StoreTypeId }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnasAMostrar"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnasAMostrar"></tr>
+    </table>
+  </ng-container>
+</app-listad-generico>
